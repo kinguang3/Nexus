@@ -17,7 +17,7 @@ completion = client.chat.completions.create(
 is_answering = False  # 是否进入回复阶段
 print("\n" + "=" * 20 + "思考过程" + "=" * 20)
 for chunk in completion:
-    delta = chunk.choices[0].delta
+    delta = chunk.choices[0].delta# 获取当前块的delta内容
     if hasattr(delta, "reasoning_content") and delta.reasoning_content is not None:
         if not is_answering:
             print(delta.reasoning_content, end="", flush=True)
