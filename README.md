@@ -1,4 +1,8 @@
+<div align="center">
+
 # Nexus
+
+</div>
 
 一个用于学习 AI 开发的项目仓库，包含 OpenAI API、LangChain、向量数据库等技术的实践代码。
 
