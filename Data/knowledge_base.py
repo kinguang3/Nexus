@@ -59,7 +59,7 @@ class KnowledgeBase(object):
         os.makedirs(config.persist_directory_path, exist_ok=True)# 创建数据库本地存储文件夹,如果文件夹存在则不创建
         self.chroma = Chroma(
             collection_name=config.collection_name,#数据库的表名
-            embedding_function=DashScopeEmbeddings(model="text-embedding-v3", dashscope_api_key="sk-ee1dd984f89a4569bed597e2cb0eaace"),# 嵌入模型
+            embedding_function=DashScopeEmbeddings(model="text-embedding-v3", dashscope_api_key=os.environ.get("DASHSCOPE_API_KEY")),# 嵌入模型
             persist_directory=config.persist_directory_path,# 数据库本地存储文件夹
         )  #向量存储实例，Chroma向量库对象
 
