@@ -1,7 +1,12 @@
-import streamlit.web.cli as stcli# 导入streamlit命令行接口
-import sys# 导入sys模块，用于修改命令行参数
+import sys
+import os
 
-app_file_path = "d:\\Nexus\\Data\\app_file_uploader.py"
-sys.argv = ["streamlit", "run", app_file_path, "--server.headless=true", "--browser.gatherUsageStats=false"]# 非交互式模式，默认值为false
-# 禁用浏览器统计信息收集，默认值为true
+venv_python = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'venv', 'Scripts', 'python.exe')
+if sys.executable != venv_python and os.path.exists(venv_python):
+    os.execl(venv_python, venv_python, *sys.argv)
+
+import streamlit.web.cli as stcli
+
+app_file_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "app_file_uploader.py")
+sys.argv = ["streamlit", "run", app_file_path, "--server.headless=true", "--browser.gatherUsageStats=false"]
 stcli.main()

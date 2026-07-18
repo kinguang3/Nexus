@@ -3,13 +3,14 @@
 '''
 from operator import length_hint
 import os# 导入os模块，用于文件操作
+from dotenv import load_dotenv
 import config_data as config # 导入配置模块，用于获取配置参数
 import hashlib
 from langchain_chroma import Chroma# 导入Chroma类，用于创建Chroma向量库对象
 from langchain_community.embeddings import DashScopeEmbeddings# 导入DashScopeEmbeddings类，用于创建嵌入模型
 from langchain_text_splitters import RecursiveCharacterTextSplitter# 导入RecursiveCharacterTextSplitter类，用于文本分割
 from datetime import datetime
-
+load_dotenv(dotenv_path=os.path.join(os.path.dirname(__file__), '..', '.env'))# 加载环境变量
 
 
 def check_md5(md5_str: str):
