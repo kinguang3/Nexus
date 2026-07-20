@@ -6,3 +6,4 @@ __pycache__/
 .DS_Store
 chroma_db/
 Data/history_store/
+错误日志.md
