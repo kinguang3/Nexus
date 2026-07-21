@@ -13,3 +13,6 @@ max_split_char_number = 1000# 最大分割次数,默认值为1000
 
 #相似度检索
 similarity_threshold = 2
+
+
+session_config = {"configurable": {"session_id": "user_001"}}

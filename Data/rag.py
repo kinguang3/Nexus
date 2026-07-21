@@ -32,7 +32,7 @@ class RagService:
         ])
 
         # 初始化对话模型，使用通义千问(qwen-plus)
-        self.chain_model = ChatTongyi(model_name="qwen-plus", dashscope_api_key=os.environ.get("DASHSCOPE_API_KEY"))
+        self.chain_model = ChatTongyi(model_name="qwen-plus", dashscope_api_key=os.environ.get("DASHSCOPE_API_KEY"), streaming=True)
         self.chain = self.__get_chain()
 
     def __get_chain(self):

@@ -7,6 +7,6 @@ if sys.executable != venv_python and os.path.exists(venv_python):
 
 import streamlit.web.cli as stcli
 
-app_file_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "app_file_uploader.py")
+app_file_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "app_qa.py")
 sys.argv = ["streamlit", "run", app_file_path, "--server.headless=true", "--browser.gatherUsageStats=false"]
 stcli.main()
