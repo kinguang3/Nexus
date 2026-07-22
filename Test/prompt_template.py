@@ -1,9 +1,13 @@
-from langchain_openai import ChatOpenAI# 导入ChatOpenAI类，用于创建聊天模型
-from langchain_core.prompts import ChatPromptTemplate# 导入ChatPromptTemplate类，用于创建聊天提示词
+from langchain_openai import ChatOpenAI
+from langchain_core.prompts import ChatPromptTemplate
+import os
+from dotenv import load_dotenv
 
-llm = ChatOpenAI(# 初始化ChatOpenAI模型，聊天模型
+load_dotenv(os.path.join(os.path.dirname(__file__), '..', '.env'))
+
+llm = ChatOpenAI(
     model="qwen-max",
-    api_key="sk-ee1dd984f89a4569bed597e2cb0eaace",
+    api_key=os.environ.get("DASHSCOPE_API_KEY"),
     base_url="https://dashscope.aliyuncs.com/compatible-mode/v1"
 )
 

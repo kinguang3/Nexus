@@ -1,9 +1,11 @@
 from openai import OpenAI
 import os
+from dotenv import load_dotenv
+
+load_dotenv(os.path.join(os.path.dirname(__file__), '..', '.env'))
 
 client = OpenAI(
-    # 如果没有配置环境变量，请用阿里云百炼API Key替换：api_key="sk-xxx"
-    api_key="sk-ee1dd984f89a4569bed597e2cb0eaace",
+    api_key=os.environ.get("DASHSCOPE_API_KEY"),
     base_url="https://dashscope.aliyuncs.com/compatible-mode/v1",
 )
 
