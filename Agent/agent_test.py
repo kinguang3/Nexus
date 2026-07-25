@@ -1,5 +1,3 @@
-from pyexpat import model
-
 from langchain.agents import create_agent
 from langchain_community.chat_models import ChatTongyi
 import os
