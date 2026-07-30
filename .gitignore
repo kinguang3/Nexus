@@ -7,3 +7,4 @@ __pycache__/
 chroma_db/
 Data/history_store/
 错误日志.md
+logs/
