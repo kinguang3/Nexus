@@ -38,4 +38,4 @@ if prompt:
         
         st.chat_message("assistant").write_stream(capture(res_stream, response_messages))#显示助手回复
         st.session_state["messages"].append({"role": "assistant", "content": response_messages[-1]})#保存助手回复
-        st.rerun()
+        st.rerun()#重新运行页面,折叠助手思考
